@@ -9,6 +9,7 @@
   "author": "rkurtjanyk",
   "license": "ISC",
   "dependencies": {
+    "angular": "^1.5.8",
     "bootstrap": "^3.3.7",
     "font-awesome": "^4.6.3"
   },

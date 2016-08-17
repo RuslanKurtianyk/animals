@@ -1,6 +1,50 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.main-navigation {
+  padding: 0;
+  margin: 0;
+  height: 50px;
+  border-bottom: 1px solid #333;
+}
+
+.main-navigation div {
+  border-right: 1px solid #333;
+  padding: 15px 0 0 5px;
+  height: 100%;
+}
+
 header {
   height: 100px;
-  background: #333;
+  border-bottom: 1px solid #333;
+}
+
+.header-title {
+  padding: 15px 0 0 10px;
+  font-size: 1.5em;
+}
+
+footer {
+  padding: 10px;
+}
+
+.animals-footer {
+  border-top: 1px solid #333;
+}
+
+.footer-text {
+  line-height: 2;
+}
+
+.footer-help-container {
+  padding-right: 10px;
+}
+
+/* buttons styles */
+.btn-menu {
+  margin: 10px 0 0 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

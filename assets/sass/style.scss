@@ -1,6 +1,56 @@
+// colors
 $primary-color: #333;
+$border-color:#686868;
+
+//borders
+$def-border: 1px solid $primary-color;
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.main-navigation{
+    padding:0;
+    margin:0;
+    height:50px;
+    border-bottom:$def-border;
+}
+
+.main-navigation div{
+    border-right:$def-border;
+    padding:15px 0 0 5px;
+    height:100%;
+}
 
 header{
     height:100px;
-    background: $primary-color;
+    border-bottom:$def-border;
+}
+.header-title{
+    padding: 15px 0 0 10px;
+    font-size:1.5em;
+}
+
+footer{
+    padding:10px;
+}
+
+.animals-footer{
+    border-top:$def-border;
+}
+
+.footer-text{
+    line-height:2;
+}
+
+.footer-help-container{
+    padding-right:10px;
+}
+
+
+/* buttons styles */
+.btn-menu{
+    margin:10px 0 0 10px;
 }
