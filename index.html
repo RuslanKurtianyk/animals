@@ -6,10 +6,9 @@
     <!--  -->
 
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" type="text/css" />
-    <link rel="stylesheet" href="assets/css/reset.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 </head>
-<body>
+<body ng-app="animalApp">
     <header>
         <div class="header-menu-container">
             <button class="btn btn-default btn-menu">
@@ -23,23 +22,23 @@
     
     
     
-<div class="main-navigation row">
-    <div class="col-lg-3 col-md-3 col-sm-3">
-        <a href="#">Cats</a>
+<div class="main-navigation row" ng-controller="NavigationController">
+    <div ng-class="{active: isActive('/cats')}" class="col-lg-3 col-md-3 col-sm-3">
+        <a href="#/cats">Cats</a>
     </div>
-    <div class="col-lg-3 col-md-3 col-sm-3">
-        <a href="#">Dogs</a>
+    <div ng-class="{active: isActive('/dogs')}" class="col-lg-3 col-md-3 col-sm-3">
+        <a href="#/dogs">Dogs</a>
     </div>
-    <div class="col-lg-3 col-md-3 col-sm-3">
-       <a href="#">Horses</a> 
+    <div ng-class="{active: isActive('/horses')}" class="col-lg-3 col-md-3 col-sm-3">
+       <a href="#/horses">Horses</a> 
     </div>
-    <div class="col-lg-3 col-md-3 col-sm-3">
-        <a href="#">Contact us</a>
+    <div ng-class="{active: isActive('/contact-us')}" class="col-lg-3 col-md-3 col-sm-3">
+        <a href="#/contact-us">Contact us</a>
     </div>
 </div>
 
     <div class="main-content">
-        content
+        <ng-view></ng-view>
     </div>
     
     <footer class="footer navbar-fixed-bottom animals-footer">
@@ -52,5 +51,10 @@
             </button>
         </span>
     </footer>
+    
+    <script type="text/javascript" src="node_modules/angular/angular.js"></script>
+    <script type="text/javascript" src="node_modules/angular-route/angular-route.js"></script>
+    <script type="text/javascript" src="app/app.js"></script>
+    
 </body>
 </html>

@@ -16,6 +16,10 @@ html, body {
   height: 100%;
 }
 
+.active {
+  background: #c0dbd6;
+}
+
 header {
   height: 100px;
   border-bottom: 1px solid #333;
@@ -42,9 +46,32 @@ footer {
   padding-right: 10px;
 }
 
+/* contact-form */
+.contact-us-container {
+  margin: 10px;
+  padding: 5px;
+}
+
+.contact-us-container input {
+  margin: 10px 0;
+}
+
+.contact-us-container textarea {
+  margin: 10px 0;
+}
+
+.contact-form {
+  display: block;
+  width: 100%;
+}
+
 /* buttons styles */
 .btn-menu {
   margin: 10px 0 0 10px;
+}
+
+.btn-send {
+  float: right;
 }
 
 /*# sourceMappingURL=style.css.map */
