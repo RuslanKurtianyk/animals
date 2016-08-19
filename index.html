@@ -1,60 +1,75 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Animals</title>
-    <!--  -->
-
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 </head>
+
 <body ng-app="animalApp">
-    <header>
+    <header ng-controller="MenuController">
         <div class="header-menu-container">
-            <button class="btn btn-default btn-menu">
-                Menu
-            </button>
+            <button class="btn btn-default btn-menu" ng-click="showMenu($event)">
+                    Menu
+                </button>
         </div>
         <div class="header-title">
             Animals
         </div>
+        <menu visible="leftVisible" alignment="left">
+            <menu-item hash="/cats">> Cats</menu-item>
+            <menu-item hash="/dogs">> Dogs</menu-item>
+            <menu-item hash="/horses">> Horses</menu-item>
+            <menu-item hash="/contact-us">> Contact us</menu-item>
+        </menu>
     </header>
-    
-    
-    
-<div class="main-navigation row" ng-controller="NavigationController">
-    <div ng-class="{active: isActive('/cats')}" class="col-lg-3 col-md-3 col-sm-3">
-        <a href="#/cats">Cats</a>
+    <div class="main-navigation row" ng-controller="NavigationController">
+        <a href="#/cats">
+            <div ng-class="{active: isActive('/cats')}" class="col-lg-3 col-md-3 col-sm-3">
+                Cats
+            </div>
+        </a>
+        <a href="#/dogs">
+            <div ng-class="{active: isActive('/dogs')}" class="col-lg-3 col-md-3 col-sm-3">
+                Dogs
+            </div>
+        </a>
+        <a href="#/horses">
+            <div ng-class="{active: isActive('/horses')}" class="col-lg-3 col-md-3 col-sm-3">
+                Horses
+            </div>
+        </a>
+        <a href="#/contact-us">
+            <div ng-class="{active: isActive('/contact-us')}" class="col-lg-3 col-md-3 col-sm-3">
+                Contact us
+            </div>
+        </a>
     </div>
-    <div ng-class="{active: isActive('/dogs')}" class="col-lg-3 col-md-3 col-sm-3">
-        <a href="#/dogs">Dogs</a>
-    </div>
-    <div ng-class="{active: isActive('/horses')}" class="col-lg-3 col-md-3 col-sm-3">
-       <a href="#/horses">Horses</a> 
-    </div>
-    <div ng-class="{active: isActive('/contact-us')}" class="col-lg-3 col-md-3 col-sm-3">
-        <a href="#/contact-us">Contact us</a>
-    </div>
-</div>
-
     <div class="main-content">
         <ng-view></ng-view>
     </div>
-    
-    <footer class="footer navbar-fixed-bottom animals-footer">
+    <dialog id="modal-window" ng-controller="DialogController">
+        <p>{{getMessage()}}</p>
+        <div>
+            <button class="btn" id="yes" ng-click="toHelp()">Yes</button>
+            <button class="btn" id="no" ng-click="closeDialog()">No</button>
+        </div>
+    </dialog>
+    <footer class="footer navbar-fixed-bottom animals-footer" ng-controller="FooterController">
         <span class="footer-text">
-            Animals footer
-        </span>
+                Animals footer
+            </span>
         <span class="navbar-right footer-help-container">
-            <button class="btn btn-default btn-help">
+            <button class="btn btn-default btn-help" ng-click="openHelp()">
                 Help
             </button>
         </span>
     </footer>
-    
     <script type="text/javascript" src="node_modules/angular/angular.js"></script>
     <script type="text/javascript" src="node_modules/angular-route/angular-route.js"></script>
-    <script type="text/javascript" src="app/app.js"></script>
-    
+    <script type="text/javascript" src="dist/app.js"></script>
 </body>
+
 </html>

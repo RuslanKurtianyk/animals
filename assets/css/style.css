@@ -1,6 +1,15 @@
 html, body {
   height: 100%;
   margin: 0;
+  overflow-x: hidden;
+}
+
+body {
+  background: url(../img/background.jpg) top right repeat;
+}
+
+input, textarea {
+  background: #d8d2b3;
 }
 
 .main-navigation {
@@ -17,7 +26,7 @@ html, body {
 }
 
 .active {
-  background: #c0dbd6;
+  background: #c0beb6;
 }
 
 header {
@@ -53,19 +62,87 @@ footer {
 }
 
 .contact-us-container input {
-  margin: 10px 0;
+  margin: 10px auto;
+  padding: 3px 5px;
 }
 
 .contact-us-container textarea {
-  margin: 10px 0;
+  margin: 10px auto;
+  padding: 3px 5px;
 }
 
 .contact-form {
   display: block;
   width: 100%;
+  max-width: 500px;
+}
+
+.btn-send-container {
+  max-width: 500px;
+  margin: 10px auto;
+}
+
+/*modal window*/
+dialog {
+  width: 220px;
+  height: 150px;
+  background: #bfbba8;
+}
+
+dialog div {
+  margin-top: 20px;
+}
+
+dialog p {
+  word-wrap: break-word;
+}
+
+/* menu styles */
+menu {
+  display: block;
+  z-index: 2000;
+}
+
+menu > div {
+  position: absolute;
+  top: 0;
+  z-index: 2000;
+  width: 250px;
+  height: 100%;
+  box-sizing: border-box;
+  transition: transform ease 500ms;
+}
+
+menu > div.left {
+  background: #c1b25e;
+  left: -250px;
+}
+
+menu > div.show.left {
+  transform: translate3d(250px, 0, 0);
+  -webkit-transform: translate3d(250px, 0, 0);
+}
+
+menu > div > menu-item > div {
+  float: left;
+  width: 100%;
+  margin: 0;
+  padding: 10px 15px;
+  border-bottom: solid 1px #555;
+  cursor: pointer;
+  box-sizing: border-box;
+  color: #000;
+}
+
+menu > div > menu-item > div:hover {
+  color: #F0F0F0;
 }
 
 /* buttons styles */
+.btn {
+  background: #aaa796;
+}
+
 .btn-menu {
   margin: 10px 0 0 10px;
 }
