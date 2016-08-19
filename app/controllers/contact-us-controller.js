@@ -1,4 +1,4 @@
-app.controller("ContactUsController", function ContactUsController($scope, $rootScope) {
+app.controller("ContactUsController", ['$scope','$rootScope', function ContactUsController($scope, $rootScope) {
 
     $scope.contactData = {
         email: "",
@@ -39,4 +39,4 @@ app.controller("ContactUsController", function ContactUsController($scope, $root
         }
     }
 
-});
+}]);

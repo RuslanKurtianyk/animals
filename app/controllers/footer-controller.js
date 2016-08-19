@@ -1,4 +1,4 @@
-app.controller("FooterController", function FooterController($scope, $rootScope) {
+app.controller("FooterController", ['$scope','$rootScope',function FooterController($scope, $rootScope) {
 
     $scope.dialogWindow = angular.element(document.querySelector('#modal-window'));
 
@@ -7,4 +7,4 @@ app.controller("FooterController", function FooterController($scope, $rootScope)
         document.getElementById('modal-window').show();
         document.getElementById('yes').removeAttribute('disabled');
     }
-});
+}]);

@@ -71,36 +71,36 @@ app.directive('contactUs', function($compile) {
         }
     };
 });
-app.controller("NavigationController", function NavigationController($scope, $rootScope, $location) {
+app.controller("NavigationController", ['$scope','$rootScope','$location',function NavigationController($scope, $rootScope, $location) {
 
     /* function to check current path */
     $scope.isActive = function(viewLocation) {
         return viewLocation === $location.path();
     };
 
-});
-			app.controller("MenuController", function($scope, $rootScope) {
-			    $scope.leftVisible = false;
+}]);
+app.controller("MenuController", ['$scope', '$rootScope', function($scope, $rootScope) {
+	$scope.leftVisible = false;
 
-			    $scope.close = function() {
-			        $scope.leftVisible = false;
-			        $scope.rightVisible = false;
-			    };
+	$scope.close = function() {
+		$scope.leftVisible = false;
+		$scope.rightVisible = false;
+	};
 
-			    $scope.showMenu = function(e) {
-			        $scope.leftVisible = true;
-			        e.stopPropagation();
-			    };
+	$scope.showMenu = function(e) {
+		$scope.leftVisible = true;
+		e.stopPropagation();
+	};
 
-			    $rootScope.$on("documentClicked", _close);
+	$rootScope.$on("documentClicked", _close);
 
-			    function _close() {
-			        $scope.$apply(function() {
-			            $scope.close();
-			        });
-			    }
-			});
-app.controller("ContactUsController", function ContactUsController($scope, $rootScope) {
+	function _close() {
+		$scope.$apply(function() {
+			$scope.close();
+		});
+	}
+}]);
+app.controller("ContactUsController", ['$scope','$rootScope', function ContactUsController($scope, $rootScope) {
 
     $scope.contactData = {
         email: "",
@@ -141,8 +141,8 @@ app.controller("ContactUsController", function ContactUsController($scope, $root
         }
     }
 
-});
-app.controller("DialogController", function DialogController($scope, $rootScope, $window) {
+}]);
+app.controller("DialogController", ['$scope','$rootScope','$window',function DialogController($scope, $rootScope, $window) {
 
     $scope.getMessage = function() {
         return $rootScope.message;
@@ -158,8 +158,8 @@ app.controller("DialogController", function DialogController($scope, $rootScope,
         document.getElementById('modal-window').close();
         $window.open('https://github.com/RuslanKurtjanyk/animals', '_blank');
     }
-});
-app.controller("FooterController", function FooterController($scope, $rootScope) {
+}]);
+app.controller("FooterController", ['$scope','$rootScope',function FooterController($scope, $rootScope) {
 
     $scope.dialogWindow = angular.element(document.querySelector('#modal-window'));
 
@@ -168,4 +168,4 @@ app.controller("FooterController", function FooterController($scope, $rootScope)
         document.getElementById('modal-window').show();
         document.getElementById('yes').removeAttribute('disabled');
     }
-});
+}]);

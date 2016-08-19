@@ -1,4 +1,4 @@
-app.controller("DialogController", function DialogController($scope, $rootScope, $window) {
+app.controller("DialogController", ['$scope','$rootScope','$window',function DialogController($scope, $rootScope, $window) {
 
     $scope.getMessage = function() {
         return $rootScope.message;
@@ -14,4 +14,4 @@ app.controller("DialogController", function DialogController($scope, $rootScope,
         document.getElementById('modal-window').close();
         $window.open('https://github.com/RuslanKurtjanyk/animals', '_blank');
     }
-});
+}]);
