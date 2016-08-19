@@ -1,6 +1,10 @@
+.null-field, html, body, .main-navigation {
+  margin: 0;
+  padding: 0;
+}
+
 html, body {
   height: 100%;
-  margin: 0;
   overflow-x: hidden;
 }
 
@@ -13,8 +17,6 @@ input, textarea {
 }
 
 .main-navigation {
-  padding: 0;
-  margin: 0;
   height: 50px;
   border-bottom: 1px solid #333;
 }
@@ -61,12 +63,7 @@ footer {
   padding: 5px;
 }
 
-.contact-us-container input {
-  margin: 10px auto;
-  padding: 3px 5px;
-}
-
-.contact-us-container textarea {
+.contact-us-container input, .contact-us-container textarea {
   margin: 10px auto;
   padding: 3px 5px;
 }

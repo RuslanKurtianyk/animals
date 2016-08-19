@@ -6,12 +6,17 @@ $btn-color:#aaa796;
 //borders
 $def-border: 1px solid $primary-color;
 
+.null-field{
+    margin:0;
+    padding:0;
+}
 
 html, body {
+  @extend .null-field;
   height: 100%;
-  margin: 0;
   overflow-x:hidden;
 }
+
 body{
     background:url(../img/background.jpg) top right repeat;
 }
@@ -20,8 +25,7 @@ input, textarea{
     background:#d8d2b3;
 }
 .main-navigation{
-    padding:0;
-    margin:0;
+    @extend .null-field;
     height:50px;
     border-bottom:$def-border;
 }
@@ -69,12 +73,7 @@ footer{
     padding:5px;
 }
 
-.contact-us-container input{
-    margin:10px auto;
-    padding:3px 5px;
-}
-
-.contact-us-container textarea{
+.contact-us-container input, .contact-us-container textarea{
     margin:10px auto;
     padding:3px 5px;
 }
@@ -109,6 +108,7 @@ menu {
   display: block;
   z-index: 2000;
 }
+
 menu > div {
   position: absolute;
   top: 0;
@@ -118,6 +118,7 @@ menu > div {
   box-sizing: border-box;
   transition: transform ease 500ms;
 }
+
 menu > div.left {
   background: #c1b25e;
   left: -250px;
