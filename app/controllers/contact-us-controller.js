@@ -24,10 +24,9 @@ app.controller("ContactUsController", function ContactUsController($scope, $root
 
     $scope.testEmail = function() {
         if ($scope.validateEmail() && $scope.checkMessage()) {
-            /*  */
             $rootScope.message = JSON.stringify($scope.contactData);
             document.getElementById('modal-window').show();
-            document.getElementById('yes').setAttribute('disabled', true);
+            document.getElementById('yes').setAttribute('disabled', "on");
         }
         else if ($scope.validateEmail() && !$scope.checkMessage()) {
             alert("Message is too short!");

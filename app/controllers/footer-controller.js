@@ -5,5 +5,6 @@ app.controller("FooterController", function FooterController($scope, $rootScope)
     $scope.openHelp = function() {
         $rootScope.message = "Need help?";
         document.getElementById('modal-window').show();
+        document.getElementById('yes').removeAttribute('disabled');
     }
 });
