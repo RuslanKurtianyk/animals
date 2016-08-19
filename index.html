@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Animals</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 </head>
 
@@ -53,8 +54,8 @@
     <dialog id="modal-window" ng-controller="DialogController">
         <p>{{getMessage()}}</p>
         <div>
-            <button class="btn" id="yes" ng-click="toHelp()">Yes</button>
-            <button class="btn" id="no" ng-click="closeDialog()">No</button>
+            <button class="btn" id="yes" ng-click="toHelp()"><i class="fa fa-check"></i></button>
+            <button class="btn" id="no" ng-click="closeDialog()"><i class="fa fa-close"></i></button>
         </div>
     </dialog>
     <footer class="footer navbar-fixed-bottom animals-footer" ng-controller="FooterController">
