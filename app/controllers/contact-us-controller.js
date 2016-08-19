@@ -24,7 +24,7 @@ app.controller("ContactUsController", function ContactUsController($scope, $root
 
     $scope.testEmail = function() {
         if ($scope.validateEmail() && $scope.checkMessage()) {
-            $rootScope.message = JSON.stringify($scope.contactData);
+            $rootScope.message = "<p>Thanks! Data send successfully!(email: " + JSON.stringify($scope.contactData.email) + ", message: \""+JSON.stringify($scope.contactData.message)+"\")";
             document.getElementById('modal-window').show();
             document.getElementById('yes').setAttribute('disabled', "on");
         }
